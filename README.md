@@ -47,6 +47,9 @@ You are more than welcome to add a .gitignore file as part of this. If you would
 with most commonly ignored folders and directories in this repo's root directory.
 - ![GitIgnore Template](./images/gitignore_template_location.PNG)
 
+### How to Mirror (duplicate) this Repository for new Tech Primer
+- ![Git Mirror](./images/git-mirror.PNG))
+
 ### How to Create Tech Primer
 
 The biggest advantage to a Tech Primer is the motto: "when in doubt, screenshot it out." Everything and
