@@ -1,7 +1,7 @@
-# Tech Primer Template
+# Pipenv Tech Primer
 
 Description/Purpose:
-- For generally creating a Tech Primer a template can be used. This repository is the template from which to process.
+- Two methods on how to create and leverage Pipenv virtual environments and benefits therein.
 
 ## Prerequisites
 - Git
