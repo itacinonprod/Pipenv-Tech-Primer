@@ -6,146 +6,102 @@ Description/Purpose:
 ## Prerequisites
 - Git
 - Terminal
-- IDE
+- IDE (PyCharm Preferred)
+- Python3
 
 ## Assumptions
-- Know how to navigate Github web UI
-- How to take local Screenshots of desktop
+- What a virtual environment is and how to create one using the Python3 venv module, or 
+using Pycharm to create new venv environment and folder in your preferred directory.
+- [Python Pipenv and virtual Environments](https://docs.python-guide.org/dev/virtualenvs/)
 
 ## Instructions
 
-### Creating New Repo
+- If you are unsuccessful in leveraging the standard method of creating a Pipenv virtual
+environment, then refer to the Alternative Creation Method below.
+- For reasons that Mac, Windows, and Linux do not interact well with one another, there might
+be reasons why standard method won't work.
 
-Obtain login credentials for Git. SSH into DevCPortal server. To obtain password, contact
-IT Team under Bruce.
+- If you are asking yourself why would one prefer a Pipenv virtual environment over a virtual environment 
+created by the user and leveraging the requirements.txt file with python -m venv module, here are some 
+benefits:
+  - Pipenv graph : manages all packages, package dependencies, and package upgrades on user's behalf.
+  - Pipenv shell : a virtual environment subshell that automatically activated the virtual environment on user's behalf.
+  - Pipenv virtual environments are entirely ephemeral and can be recreated exactly as it was before
+with Pipfile.lock file.
+  - Pipenv has conventional methods to work more dependably with container solutions as your solution and upgrades
+are reliable and repeatable.
+  - Pipenv manages the python version for you and version upgrades.
+  - Pipenv is able to leverage unit tests with other python modules directly from code.
+  - All commands in Pipenv and venv virtual environments can be executed without admin or root privileges.
+
+### Standard Creation Method
+
+- This method and practices can be found online and many resources exist to better understand how Pipenv works.
+[Real Python Pipenv](https://realpython.com/pipenv-guide/)
+
+- Navigate to directory of your choosing as any user, preferably non-admin privileges.
+![Locate Dir](./images/s_navigate_dir.PNG)
+
+- Install pipenv. In this case pipenv is already installed, but your output will be very similar.
+![Install Pipenv Package](./images/s_install_pipenv_package.PNG)
+
+- Create new Pipenv virtual environment with pipenv install. This will grab the Pipfile
+and use the packages and dependencies within to create, manage, and handle modules and packages
+on your behalf.
+![Pipenv Install Command](./images/pipenv_install.PNG)
+
+- Execute pipenv shell command to activate the virtual environment and you are good to go! Test with
+application command such as flask run.
 ```shell
-ssh -i devcportal@10.0.6.38
-```
-- ![SSH Command](./images/ssh_devcportal.PNG)
+# This is all accomplished without admin nor impact to global packages and environment.
 
-Open the encrypted file with password obtained from IT Team and get password.
-- ![Home Dir Devcportal](./images/home_dir_devcportal.PNG)
-- Password is under name: "nonprod passwd"
-
-Navigate to Github account and login.
-- ![Login to Git](./images/login_to_git.PNG)
-
-Create a new Repository.
-- ![New Repo](./images/new_repo.PNG)
-
-[//]: # (Once Organization is enabled in Git, add step: Create a new repository from the tech primer template.)
-
-Enter both a description and title.
-- ![Create New Repo Page](./images/create_new_repo_page.PNG)
-
-Open Repo settings with gear icon on right, and add Github topics as part of the creation:
-- tech-primer
-- techprimer
-- ![GitHub Topics](./images/github_topics.PNG)
-
-You are more than welcome to add a .gitignore file as part of this. If you would like, there is a .gitignore template
-with most commonly ignored folders and directories in this repo's root directory.
-- ![GitIgnore Template](./images/gitignore_template_location.PNG)
-
-### How to Mirror (duplicate) this Repository for new Tech Primer
-- ![Git Mirror](./images/git-mirror.PNG))
-
-### How to Create Tech Primer
-
-The biggest advantage to a Tech Primer is the motto: "when in doubt, screenshot it out." Everything and
-each step in a Tech Primer should be a screenshot first, and then words if author needs to further describe.
-
-Here you will see two main folders. Both of which contain a .gitkep file. This is for git itself
-as these folders are currently blank and will not be pushed to a new repo if empty. For further
-information on Git efficiencies regarding folders and files, refer to:
-[How to .gitkeep](https://thelinuxcode.com/use-gitkeep-commit-and-push-empty-git-folder-directory/).
-Once each blank folder has content within, you can remove the .gitkeep file if you'd like. If at some point
-the folder might be temporarily blank and to avoid confusion, then you can also leave the .gitkeep file
-as it will cost minimal data storage (nearly negligible at 1kb).
-
-Folder structure:
-- images
-  - Used for storing all images rendered in root ReadMe.md file.
-  - If you would like to create another folder of images for a sub directory ReadMe.md file,
-then create another images folder in the sub directory.
-  - ![Images Directory](./images/images_dir.PNG)
-- resources
-  - Used for storage of supplemental material to the repository.
-  - Can be User Guides, Word documents, architecture drawings, etc.
-  - ![Resources Directory](./images/resources_dir.PNG)
-
-There are some mandatory items which need to be created in order for a Tech Primer to be purposed as such.
-- Title
-  - Update the title of each Tech Primer in root ReadMe.md to reflect the code's purpose.
-  - ![Title Section](./images/title_readme.PNG)
-- Description/Purpose of the repository itself.
-  - This is a quick one to three sentences used for someone to understand what the code within this repository does.
-  - ![Description Section](./images/desc_readme.PNG)
-- Prerequisites
-  - This is one of the most important steps in a Tech Primer. It is a quick understanding from the user's persepctive
-of what is needed to accomplish in creating the code, walking through the Tech Primer steps, and any software/tools
-that user might need to download and configure.
-  - ![Prerequisite Section](./images/prereq_section.PNG)
-- Assumptions
-  - Another important step in a tech Primer is Assumptions. These are key requirments that a user will need to research
-or understand from a basic standpoint to be able to guide themselves through completion. An example of this might be
-how to navigate the AWS Service Catalog, or have an account with free trial access to download code. An important
-deliniation, this is **not** a section to write down steps for product access or code creation, such as someone
-knowing how to SSH from a terminal. Steps such as these need to be documented accordingly and put into Tech Primer.
-  - ![Assumptions Section](./images/assupmtions_section.PNG)
-- Instructions
-  - This step is where the user walks through self-paced on Tech Primer ReadMe.md to accomplish and replicate product or
-or code for which the Tech Primer was created.
-  - Sub Instructions are to be designated with three or more "#"'s, and be a sub section of the Instructions part.
-If you are unfamiliar with Markdown titles, please refer here: [Markdown Title Syntax](https://www.markdownguide.org/basic-syntax/#headings)
-  - ![Instructions Section](./images/instructions_section.PNG)
-- Points of Contact
-  - This section is designed for any user who might have updates, contributions, or even questions on the Tech Primer itself.
-  - An author should not hesitate to put their name on a Tech Primer, because if documented thoroughly, a user will be able
-to complete the Tech Primer at a self-paced time and be completely self-service.
-  - ![POCs Section](./images/pocs_section.PNG)
-
-### Important Notes
-
-The ReadMe.md file is documenation as close to code as you are able to get becasue it sits with the code in question.
-- For furether Markdown syntax please refer to: [Basic Markdown Syntax](https://www.markdownguide.org/basic-syntax/)
-
-This template has working examples on how to hyperlink, create bullet points, tables, code snippet, and image links in Markdown.
-
-#### Examples:
-
-##### Hyperlink
-
-```shell
-[]()
+# Command creates local shell within pipenv folder under /home/user/.local/<pipenv-venv>, or similar location.
+pipenv shell
+# Executes example application run.
+flask --app main run --debug
 ```
 
-##### Bullet Points
+### Alternative Creation Method
 
-- Bullet points will be designated with a hypen "-" and followed by sentences. If you want to further indent a second
-bullet point, you must do an under hanging indent with two spaces.
-  - Such as this "  -".
+- In a terminal see if Pipenv is installed via command line.
+![CLI pipenv](./images/ns_pipenv_not_found.PNG)
 
-##### Tables
+- Open Pycharm and navigate to Settings.
+![Pycharm Settings](./images/ns_settings_project.PNG)
 
-| Column 1      | Column 2      |
-| ------------- | ------------- |
-| Cell 1, Row 1 | Cell 2, Row 1 |
-| Cell 1, Row 2 | Cell 1, Row 2 |
+- Open the Python Interpreter settings section.
+![Python Interpreter](./images/ns_settings_interpreter.PNG)
 
-##### Code Snippet
+- Create a new Virtual Environment, and then click Ok and then Apply.
+![Python Show All Environments](./images/ns_settings_show_all.PNG)
 
-Three ticks (ex: ``` )'s followed by a blank new line, and then a closing set of three ticks "`"'s.
-
-##### Image Links
-
-This is an exclamation point "!" followed by brackets "[]" and then parentheses "()".
+- Source the activate file under newly created venv folder. It might be located under bin.
+You can verify with listing directory tree
 ```shell
-![img.png](./images/img.png)
+# List directory tree
+ls *
+# Source the activate file
+source ./venv/Scripts/activate
 ```
 
+- Afterwards you will see the kernel title change and include the characters "(venv)"
+![venv Kernel](./images/ns_source_venv_kernel.PNG)
+
+- Install pipenv within this virtual environment, and you will generate a Pipfile and Pipfile.lock.
+![Install Pipenv Package](./images/ns_install_pipenv.PNG)
+
+- Activate Pipenv shell by installing dependencies and pipenv is smart enough to leverage the current virtual 
+environment requirements when it creates the ephemeral version under .local folder.
+![Pipenv Install Command](./images/pipenv_install.PNG)
+  - Further information can be found: [Pipenv Location](https://stackoverflow.com/questions/53793833/get-path-of-virtual-environment-in-pipenv) 
+
+- Run pipenv shell and you're good to go!
+![Pipenv Shell Activate](./images/ns_pipenv_shell.PNG)
+
+- From this point forward you are able to leverage pipenv in this project and all benefits that come 
+along with this amazing tool!
 
 ## Points of Contact
 
-- Author: Author's Name
-  - Org: Author's division or organization
+- Author: Trevor Jaskot
+  - Org: ACI IT
